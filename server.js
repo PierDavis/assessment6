@@ -1,3 +1,11 @@
+const express = require('express')
+const path = require('path')
+const app = express()
+const {bots, playerRecord} = require('./data')
+const {shuffleArray} = require('./utils')
+
+app.use(express.json())
+
 app.use(express.static("public"));
 
 app.get("/styles", (req, res) => {
@@ -6,14 +14,6 @@ app.get("/styles", (req, res) => {
 app.get("/js", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.js"));
 });
-
-const express = require('express')
-const path = require('path')
-const app = express()
-const {bots, playerRecord} = require('./data')
-const {shuffleArray} = require('./utils')
-
-app.use(express.json())
 
 app.get('/api/robots', (req, res) => {
     try {
