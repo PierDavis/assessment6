@@ -18,3 +18,7 @@ test('Title shows up when page loads', async () => {
     const displayed = await title.isDisplayed()
     expect(displayed).toBe(true)
 })
+
+test('clicking See all Bots button displays bots')
+
+test('Removed from Duo button click returns bot to lineup')
